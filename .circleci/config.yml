@@ -11,7 +11,7 @@ jobs:
         docker create -v /tmp/test --name test alpine:3.10 /bin/true
         docker cp test/tests.bats test:/tmp/test
         docker cp test/run.sh test:/tmp/test
-        docker run -t --volumes-from test pagerinc/jsonnet:${CIRCLE_SHA1:0:8} '/tmp/test/run.sh'
+        docker run -t --volumes-from test --entrypoint /bin/sh pagerinc/jsonnet:${CIRCLE_SHA1:0:8} '/tmp/test/run.sh'
 
   publish:
     machine: true
