@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 set -o errexit
 set -o nounset
