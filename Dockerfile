@@ -1,4 +1,4 @@
-FROM alpine:3.10 AS builder
+FROM alpine:3.10@sha256:6a92cd1fcdc8d8cdec60f33dda4db2cb1fcdcacf3410a8e05b3741f44a9b5998 AS builder
 
 WORKDIR /opt
 RUN apk --no-cache add build-base curl unzip
@@ -10,7 +10,7 @@ RUN curl -sSL https://github.com/google/jsonnet/archive/v${JSONNET_VERSION}.zip 
 	&& mv jsonnet-${JSONNET_VERSION} jsonnet \
 	&& cd jsonnet && make
 
-FROM alpine:3.10
+FROM alpine:3.10@sha256:6a92cd1fcdc8d8cdec60f33dda4db2cb1fcdcacf3410a8e05b3741f44a9b5998
 
 RUN apk add --no-cache libstdc++
 
