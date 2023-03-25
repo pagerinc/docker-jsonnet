@@ -17,7 +17,7 @@ RUN curl -sSL https://github.com/jsonnet-bundler/jsonnet-bundler/archive/v${JSON
 	&& mv jsonnet-bundler-${JSONNET_BUNDLER_VERION} jsonnet-bundler \
 	&& cd jsonnet-bundler && make && make install
 
-FROM alpine:3.12@sha256:a15790640a6690aa1730c38cf0a440e2aa44aaca9b0e8931a9f2b0d7cc90fd65
+FROM alpine:3.12@sha256:cb64bbe7fa613666c234e1090e91427314ee18ec6420e9426cf4e7f314056813
 
 RUN apk add --no-cache libstdc++
 
